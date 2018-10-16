@@ -7,11 +7,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    def show
     @post = Post.find(params[:id])
-    respond_to do |format|
-      format.json { render json: @post, status: 200, turbolinks: false}
-      format.html { render :show }
+      #BEFORE using a serializer:
+      render json: @post, status: 200
+       # AFTER USING OUR SERIALIZER
+      # render json: @post, status: 200
   end
 
   def new
